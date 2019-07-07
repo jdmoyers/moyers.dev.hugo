@@ -1,14 +1,18 @@
-<!doctype html>
-<html class="no-js" lang="en">
-{{ partial "head.html" . }}
-<body>
-    {{ partial "header.html" . }}
+{{ define "main" }}
+    <h1>{{.Title}}</h1>
+    {{ with .Params.subtitle }}
+        <span>{{.}}</span>
+    {{ end }}
 
-    <main id="content" role="main" tabindex="-1">
-        Test
-    </main>
+    <div>
+        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+        {{.Content}}
+    </div>
 
-    
-    {{ partial "footer.html" . }}
-</body>
-</html>
+    <div>
+        <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
+        {{ range first 10 .Pages }}
+            {{ .Render "summary"}}
+        {{ end }}
+    </div>
+{{ end }}

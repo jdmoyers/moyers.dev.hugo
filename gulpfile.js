@@ -12,16 +12,16 @@ const autoprefixer = require('autoprefixer'),
 
 var paths = {
     img: {
-        src: 'themes/moyers/src/img/**/*',
-        dir: 'themes/moyers/static/img'
+        src: './themes/moyers/static/img/**/*',
+        dir: './themes/moyers/static/img'
     },
     js: {
-        src: 'themes/moyers/src/js/**/*.js',
-        dest: 'themes/moyers/static/js'
+        src: './themes/moyers/static/src/js/**/*.js',
+        dest: './themes/moyers/static/js'
     },
     styles: {
-        src: 'themes/moyers/src/scss/**/*.scss',
-        dest: 'themes/moyers/static/css'
+        src: './themes/moyers/static/src/scss/**/*.scss',
+        dest: './themes/moyers/static/css'
     }
 };
 
@@ -97,7 +97,6 @@ function img() {
 
 
 function watch() {
-    gulp.watch(paths.html.src);
     gulp.watch(paths.styles.src, cssDev);
     gulp.watch(paths.js.src, jsDev);
 }
