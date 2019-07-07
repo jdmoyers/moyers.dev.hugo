@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer'),
       babel = require('gulp-babel'),
-      browsersync = require('browser-sync'),
       concat = require('gulp-concat'),
       eslint = require('gulp-eslint'),
       gulp = require('gulp'),
@@ -13,29 +12,18 @@ const autoprefixer = require('autoprefixer'),
 
 var paths = {
     img: {
-        src: 'img/**/*',
-        dir: 'img'
+        src: 'themes/moyers/src/img/**/*',
+        dir: 'themes/moyers/static/img'
     },
     js: {
-        src: 'src/js/**/*.js',
-        dest: 'js'
+        src: 'themes/moyers/src/js/**/*.js',
+        dest: 'themes/moyers/static/js'
     },
     styles: {
-        src: 'src/scss/**/*.scss',
-        dest: 'css'
-    },
-    html: {
-        src: ['**/*.html', '!./node_modules/**']
+        src: 'themes/moyers/src/scss/**/*.scss',
+        dest: 'themes/moyers/static/css'
     }
 };
-
-function browser() {
-    browsersync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-}
 
 function cssBuild() {
     return gulp
@@ -58,7 +46,6 @@ function cssDev() {
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest(paths.styles.dest, { sourcemaps: true }))
-        .pipe(browsersync.reload({ stream: true }))
 }
 
 function jsBuild() {
@@ -85,7 +72,6 @@ function jsDev() {
         }))
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(paths.js.dest, { sourcemaps: true }))
-        .pipe(browsersync.reload({ stream: true }))
 }
 
 function img() {
@@ -109,21 +95,15 @@ function img() {
         .pipe(gulp.dest(paths.img.dir));
 }
 
-function reload() {
-    return gulp
-        .src(paths.html.src)
-        .pipe(browsersync.reload({ stream: true }))
-}
 
 function watch() {
-    gulp.watch(paths.html.src, reload);
+    gulp.watch(paths.html.src);
     gulp.watch(paths.styles.src, cssDev);
     gulp.watch(paths.js.src, jsDev);
-    browser;
 }
 
 const build = gulp.series(jsBuild, cssBuild, img);
-const dev = gulp.parallel(cssDev, jsDev, watch, browser);
+const dev = gulp.parallel(cssDev, jsDev, watch);
 
 exports.cssBuild = cssBuild;
 exports.cssDev = cssDev;
@@ -131,6 +111,5 @@ exports.jsDev = jsDev;
 exports.jsBuild = jsBuild;
 exports.watch = watch;
 exports.build = build;
-exports.browser = browser;
 exports.dev = dev;
 exports.img = img;
