@@ -14,6 +14,9 @@ body {
     padding: 0;
     margin: 0;
     background-color: $medium-gray;
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 p {
@@ -58,17 +61,17 @@ small,
 }
 
 .wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1300px;
+    margin: 60px auto;
     background-color: $white;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     @media screen and (min-width: 1024px) {
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 30% 70%;
     }
 }
 
 .main {
-    padding: 2rem;
+    padding: 10%;
 }
