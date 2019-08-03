@@ -1,4 +1,11 @@
 @import 'helpers/variables';
 @import 'helpers/a11y';
+
+// Global
+@import 'global/global';
+@import 'global/typography';
+
+// Components
+@import 'components/header';
 @import 'components/sidebar';
-@import 'layouts/global';
+@import 'components/footer';

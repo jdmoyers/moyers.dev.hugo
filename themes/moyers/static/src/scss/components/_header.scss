@@ -1,0 +1,14 @@
+.header {
+    background-color: $gray;
+    padding: 20% 20% 1rem 20%;
+}
+
+.logo {
+    max-width: 100%;
+    text-align: center;
+
+    &-svg {
+        max-width: 125px;
+        max-height: 125px;
+    }
+}

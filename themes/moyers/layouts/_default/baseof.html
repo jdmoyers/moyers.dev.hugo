@@ -5,13 +5,15 @@
 
     <body>
         <div class="wrapper">
-            <section class="sidebar">
-                {{ partial "sidebar.html" . }}
-            </section>
+            {{ partial "header.html" }}
+
+            {{ partial "sidebar.html" . }}
 
             <main class="main" role="main" tabindex="-1">
                 {{- block "main" . }}{{- end }}
             </main>
+
+            {{ partial "footer.html" . }}
         </div>
     </body>
 </html>
