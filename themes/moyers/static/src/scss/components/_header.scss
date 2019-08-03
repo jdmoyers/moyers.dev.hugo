@@ -11,4 +11,29 @@
         max-width: 125px;
         max-height: 125px;
     }
+
+    &-svg_text {
+        font-size: 50px;
+        fill: $white;
+        text-anchor: middle;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 200;
+        transition: all ease-in-out 75ms;
+    }
+
+    &-link {
+        &:hover {
+            background-color: transparent;
+
+            .logo-svg_text {
+                &--primary {
+                    fill: $primary;
+                }
+
+                &--secondary {
+                    fill: $secondary;
+                }
+            }
+        }
+    }
 }

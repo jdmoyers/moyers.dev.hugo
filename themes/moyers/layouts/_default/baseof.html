@@ -4,12 +4,14 @@
     {{ partial "head.html" . }}
 
     <body>
+        <a class="a11y-kb-only" href="#main">Skip to main content</a>
+
         <div class="wrapper">
             {{ partial "header.html" }}
 
             {{ partial "sidebar.html" . }}
 
-            <main class="main" role="main" tabindex="-1">
+            <main id="main" class="main" role="main" tabindex="-1">
                 {{- block "main" . }}{{- end }}
             </main>
 

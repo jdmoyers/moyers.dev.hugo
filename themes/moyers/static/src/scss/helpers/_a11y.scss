@@ -16,6 +16,13 @@
     height: auto;
     margin: 0;
     overflow: visible;
-    position: static;
+    position: absolute;
+    top: 5px;
+    left: 5px;
     width: auto;
+    color: $secondary;
+    background-color: $white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
 }
