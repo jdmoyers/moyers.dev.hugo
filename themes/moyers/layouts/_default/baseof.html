@@ -5,11 +5,11 @@
 
     <body>
         <div class="wrapper">
-            {{ partial "sidebar.html" . }}
+            <section class="sidebar">
+                {{ partial "sidebar.html" . }}
+            </section>
 
-            test
-
-            <main role="main" tabindex="-1">
+            <main class="main" role="main" tabindex="-1">
                 {{- block "main" . }}{{- end }}
             </main>
         </div>
