@@ -22,22 +22,32 @@ a {
 }
 
 .wrapper {
-    max-width: 1300px;
-    margin: 60px auto;
+    margin: 10px auto;
+    max-width: calc(100vw - 20px);
     background-color: $white;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 
     @media screen and (min-width: 1024px) {
+        margin: 45px auto;
+        max-width: calc(100vw - 40px);
         grid-template-columns: 30% 70%;
         grid-template-rows: min-content 1fr min-content;
+    }
+
+    @media screen and (min-width: 1320px) {
+        margin: 60px auto;
+        max-width: 1300px;
     }
 }
 
 .main {
     padding: 10%;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 2;
+
+    @media screen and (min-width: 1024px) {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
 }

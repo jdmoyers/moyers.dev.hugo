@@ -1,0 +1,61 @@
+.nav {
+    grid-column-start: 3;
+
+    &-list {
+        margin: 15% 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &-item {
+        padding: 0;
+        margin: 0 0 0.5rem 0;
+    }
+
+    &-link {
+        color: $secondary;
+    }
+
+    &-toggle {
+        width: 44px;
+        height: 44px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+
+        &:hover {
+            .nav-toggle_svg {
+                path {
+                    fill: $secondary;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &-toggle_svg {
+        path {
+            fill: $white;
+        }
+    }
+
+    &-panel {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        padding: 20%;
+        z-index: 2;
+        background-color: $gray;
+
+        @media screen and (min-width: 1024px) {
+            height: auto;
+            width: auto;
+            position: relative;
+        }
+    }
+}

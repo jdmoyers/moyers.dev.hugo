@@ -8,7 +8,6 @@
         color: $secondary;
 
         &:hover {
-            background-color: darken($secondary, 10);
             color: $white;
         }
     }

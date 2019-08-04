@@ -2,6 +2,11 @@
     background-color: $gray;
     padding: 1rem 15% 15% 15%;
     color: $white;
+    grid-row-start: 3;
+
+    @media screen and (min-width: 1024px) {
+        grid-row-start: 2;
+    }
 
     a {
         color: $secondary;

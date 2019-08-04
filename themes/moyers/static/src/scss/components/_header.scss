@@ -1,6 +1,14 @@
 .header {
     background-color: $gray;
-    padding: 20% 20% 1rem 20%;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: min-content 1fr min-content;
+
+    @media screen and (min-width: 1024px) {
+        display: block;
+        padding: 15% 15% 1rem 15%;
+    }
 }
 
 .logo {
@@ -8,8 +16,8 @@
     text-align: center;
 
     &-svg {
-        max-width: 125px;
-        max-height: 125px;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     &-svg_text {
@@ -19,9 +27,27 @@
         font-family: 'Barlow', sans-serif;
         font-weight: 200;
         transition: all ease-in-out 75ms;
+
+        &--secondary {
+            display: none;
+
+            @media screen and (min-width: 1024px) {
+                display: block;
+            }
+        }
     }
 
     &-link {
+        width: 44px;
+        height: 44px;
+        display: block;
+
+        @media screen and (min-width: 1024px) {
+            height: 125px;
+            width: 125px;
+            margin: 0 auto;
+        }
+
         &:hover {
             background-color: transparent;
 
