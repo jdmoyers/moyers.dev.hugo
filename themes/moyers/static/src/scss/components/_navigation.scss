@@ -3,8 +3,8 @@
     grid-row-start: 1;
 
     &-list {
-        margin: 0;
-        padding: 0;
+        margin: 0.5rem 0;
+        padding:  0;
         list-style: none;
 
         @media screen and (min-width: 1024px) {
@@ -13,12 +13,18 @@
     }
 
     &-item {
-        padding: 0;
-        margin: 0 0 0.5rem 0;
+        padding: 0.75rem 0.25rem;
+        margin: 0;
+        border-top: 1px solid rgba($white, 0.25);
     }
 
     &-link {
         color: $secondary;
+        text-decoration: none;
+
+        @media screen and (min-width: 1024px) {
+            text-decoration: underline;
+        }
     }
 
     &-toggle_svg {
@@ -48,20 +54,27 @@
     }
 
     &-panel {
-        display: none;
         position: absolute;
-        width: calc(100vw - 70px);
+        width: 100vw;
         height: 100vh;
         left: 0;
         top: 0;
-        padding: 10%;
+        padding: calc(10px + 0.5rem);
         z-index: 2;
         background-color: $gray;
+        will-change: transform;
+        transform: translateX(-100%);
+        transition: transform ease-in-out 200ms;
+        overflow-y: scroll;
 
         @media screen and (min-width: 1024px) {
             height: auto;
             width: auto;
             position: relative;
+        }
+
+        &.open {
+            transform: translateX(0);
         }
     }
 }

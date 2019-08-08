@@ -1,6 +1,1 @@
-'use strict';
-
-document.querySelector('.js-toggle-navigation').on('click', function () {
-  console.log('clicked');
-});
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcmlwdC5qcyJdLCJuYW1lcyI6WyJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJvbiIsImNvbnNvbGUiLCJsb2ciXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBQSxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsdUJBQXZCLEVBQWdEQyxFQUFoRCxDQUFtRCxPQUFuRCxFQUE0RCxZQUFXO0FBQ3RFQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxTQUFaO0FBQ0EsQ0FGRCIsImZpbGUiOiJzY3JpcHRzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG5cclxuZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmpzLXRvZ2dsZS1uYXZpZ2F0aW9uJykub24oJ2NsaWNrJywgZnVuY3Rpb24oKSB7XHJcblx0Y29uc29sZS5sb2coJ2NsaWNrZWQnKTtcclxufSk7Il19
+"use strict";var navButtons=document.querySelectorAll(".js-toggle-navigation"),navDrawer=document.querySelector(".nav-panel"),html=document.querySelector("html"),_iteratorNormalCompletion=!0,_didIteratorError=!1,_iteratorError=void 0;try{for(var _step,_iterator=navButtons[Symbol.iterator]();!(_iteratorNormalCompletion=(_step=_iterator.next()).done);_iteratorNormalCompletion=!0){var button=_step.value;button.addEventListener("click",function(){navDrawer.classList.toggle("open"),html.classList.toggle("locked")})}}catch(r){_didIteratorError=!0,_iteratorError=r}finally{try{_iteratorNormalCompletion||null==_iterator.return||_iterator.return()}finally{if(_didIteratorError)throw _iteratorError}}
