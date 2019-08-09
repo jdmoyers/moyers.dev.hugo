@@ -16,15 +16,18 @@
         padding: 0.75rem 0.25rem;
         margin: 0;
         border-top: 1px solid rgba($white, 0.25);
+
+        &:first-child {
+            @media screen and (min-width: 1024px) {
+                border-top: 0;
+            }
+        }
+        
     }
 
     &-link {
         color: $secondary;
         text-decoration: none;
-
-        @media screen and (min-width: 1024px) {
-            text-decoration: underline;
-        }
     }
 
     &-toggle_svg {
@@ -71,6 +74,8 @@
             height: auto;
             width: auto;
             position: relative;
+            overflow: auto;
+            transform: translateX(0);
         }
 
         &.open {
