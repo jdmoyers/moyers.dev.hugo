@@ -19,3 +19,14 @@ min_version = "0.41"
   name = ""
   homepage = ""
   repo = ""
+
+sectionPagesMenu = "main"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "This is the blog section"
+    title = "blog section"
+    url = "/blog/"
+    weight = -110

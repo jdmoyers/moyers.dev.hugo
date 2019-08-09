@@ -14,17 +14,12 @@
         </button>
 
         <ul class="nav-list">
-            <li class="nav-item">
-                <a class="nav-link" href="#">About Me</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">My Work</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact Me</a>
-            </li>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                <li class="nav-item{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
+                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+            {{ end }}
         </ul>
     </div>
 </nav>
