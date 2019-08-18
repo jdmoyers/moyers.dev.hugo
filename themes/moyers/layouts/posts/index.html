@@ -1,0 +1,17 @@
+{{ define "main" }}
+    <h1>{{.Title}}</h1>
+    {{ with .Params.subtitle }}
+        <span>{{.}}</span>
+    {{ end }}
+
+    <div>
+        {{.Content}}
+    </div>
+
+    <div>
+        <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
+        {{ range first 10 .Pages }}
+            {{ .Render "summary"}}
+        {{ end }}
+    </div>
+{{ end }}
