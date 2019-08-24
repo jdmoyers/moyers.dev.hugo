@@ -1,28 +1,17 @@
 
 {{ define "mainImage" }}
-{{ $originalImage := .Params.featuredImage }}
+    {{ with .Params.featuredImage }}
+        {{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
+        {{ $resized := $imageResource.Resize "300x" }}
 
-    {{ if isset .Params "featuredimage" }}
         <div class="main-image_wrapper">
-            <img class="main-image" src="{{ $originalImage.Resize "300x" }}" alt="{{.Params.featuredImageAlt}}">
+            <img class="main-image" src="{{ $resized.RelPermalink }}" alt="{{.Params.featuredImageAlt}}">
         </div>
     {{ end }}
 {{ end }}
 
 {{ define "main" }}
     <h1>{{.Title}}</h1>
-    {{ with .Params.subtitle }}
-        <span>{{.}}</span>
-    {{ end }}
-
-    <div>
-        {{.Content}}
-    </div>
-
-    <div>
-        <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
-        {{ range first 10 .Pages }}
-            {{ .Render "summary"}}
-        {{ end }}
-    </div>
+    
+    {{.Content}}
 {{ end }}
