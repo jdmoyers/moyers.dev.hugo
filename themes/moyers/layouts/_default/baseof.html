@@ -15,7 +15,11 @@
             {{ partial "sidebar.html" . }}
             
             <main id="main" class="main" role="main" tabindex="-1">
-                {{- block "main" . }}{{- end }}
+                {{- block "mainImage" . }}{{- end }}
+
+                <div class="main-content">
+                    {{- block "main" . }}{{- end }}
+                </div>
             </main>
 
             {{ partial "footer.html" . }}

@@ -52,12 +52,14 @@ a {
 }
 
 .main {
-    padding: 10%;
-
     @media screen and (min-width: 1024px) {
         grid-row-start: 1;
         grid-row-end: 4;
         grid-column-start: 2;
         grid-column-end: 2;
+    }
+
+    &-content {
+        padding: 10%;
     }
 }

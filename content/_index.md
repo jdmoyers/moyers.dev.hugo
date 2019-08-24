@@ -5,6 +5,7 @@ draft: false
 keywords: "test test2"
 description: "This is the description of this page"
 weight: 1
+featured_image: "header.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam neque sit amet condimentum iaculis. Mauris a felis ornare, ornare nisl at, placerat quam. Donec auctor tristique erat, id interdum justo gravida ut. Pellentesque posuere efficitur ipsum, ac eleifend nulla fermentum non. Fusce vitae nisl id leo eleifend consequat eu sit amet purus. Suspendisse quam purus, varius non felis quis, dignissim cursus lacus. In sit amet cursus arcu. Cras efficitur, est quis porta sollicitudin, tortor neque pretium eros, vitae tempor erat massa at metus. Sed hendrerit vulputate nunc, nec pretium massa faucibus id.
