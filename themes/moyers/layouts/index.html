@@ -1,7 +1,10 @@
+
 {{ define "mainImage" }}
-    {{ if isset .Params "featured_image" }}
+{{ $originalImage := .Params.featuredImage }}
+
+    {{ if isset .Params "featuredimage" }}
         <div class="main-image_wrapper">
-            <img class="main-image" src="{{.Site.BaseURL}}{{ .File.Dir }}{{.File.BaseFileName }}/{{.Params.featured_image}}" alt="{{ .Title }}">
+            <img class="main-image" src="{{ $originalImage.Resize "300x" }}" alt="{{.Params.featuredImageAlt}}">
         </div>
     {{ end }}
 {{ end }}

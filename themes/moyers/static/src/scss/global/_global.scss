@@ -31,6 +31,10 @@ a {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 .wrapper {
     margin: 10px auto;
     max-width: calc(100vw - 20px);
