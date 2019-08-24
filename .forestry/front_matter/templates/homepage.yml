@@ -11,3 +11,5 @@ fields:
 - type: file
   name: featuredImage
   label: featuredImage
+pages:
+- content/test-page-2.md
