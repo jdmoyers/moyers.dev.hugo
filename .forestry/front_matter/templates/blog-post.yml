@@ -17,7 +17,7 @@ fields:
   type: tag_list
   default: []
   label: Categories
-- name: featureimage
+- name: featuredimage
   type: file
   config:
     maxSize: 250
