@@ -10,10 +10,10 @@
             <div class="post-meta">
                 {{- if not .Date.IsZero }}
                     <div class="">
-                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format ( .Site.Params.dateformat )  }}</time>
+                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.dateformat ) }}</time>
                         <br />
                         {{- if ne .Date .Lastmod }}
-                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Format ( .Site.Params.dateformat ) }}</time>
+                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Local.Format ( .Site.Params.dateformat ) }}</time>
                         {{- end }}
                     </div>
                 {{ end -}}
