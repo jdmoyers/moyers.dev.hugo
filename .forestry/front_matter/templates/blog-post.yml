@@ -17,19 +17,22 @@ fields:
   type: tag_list
   default: []
   label: Categories
+- name: show_featured_image
+  type: boolean
+  label: Show Featured Image
 - name: featuredimage
   type: file
   config:
     maxSize: 250
   label: Featured Image
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
 - name: featuredimagealttext
   type: text
   config:
     required: true
   label: Featured Image Alt Text
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
 pages:
 - content/posts/my-first-post.md
