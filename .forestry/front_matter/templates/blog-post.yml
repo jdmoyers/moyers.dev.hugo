@@ -26,5 +26,10 @@ fields:
   type: tag_list
   default: []
   label: Tags
+- name: featuredimagealttext
+  type: text
+  config:
+    required: true
+  label: Featured Image Alt Text
 pages:
 - content/posts/my-first-post.md
