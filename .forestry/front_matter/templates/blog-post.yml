@@ -27,3 +27,5 @@ fields:
       file: 
       path: 
   label: Template
+pages:
+- content/posts/my-first-post.md
