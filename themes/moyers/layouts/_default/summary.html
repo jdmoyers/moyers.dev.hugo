@@ -1,0 +1,21 @@
+<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title ">
+			<a href="{{ .RelPermalink }}" rel="bookmark">
+				{{ .Title }}
+			</a>
+		</h2>
+
+		{{- with .Params.lead }}
+			<p class="list__lead post__lead">{{ . }}</p>
+		{{- end }}
+	</header>
+
+	{{ .Summary }}
+
+	{{- if .Site.Params.readmore }}
+		{{- if .Truncated }}
+			<a class="list__footer-readmore btn" href="{{ .RelPermalink }}">{{ T "read_more" }}</a>
+		{{- end }}
+	{{- end }}
+</article>
