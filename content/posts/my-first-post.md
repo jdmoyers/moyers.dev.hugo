@@ -6,7 +6,6 @@ categories:
 - Category 1
 - Category 2
 tags:
-- tag 1
 - tag 2
 
 ---

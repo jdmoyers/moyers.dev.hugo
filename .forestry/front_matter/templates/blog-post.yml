@@ -13,20 +13,10 @@ fields:
   config:
     required: true
   default: now
-- name: layout
-  type: select
+- name: categories
+  type: tag_list
   default: []
-  config:
-    required: false
-    options:
-    - Single
-    - Listing
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Template
+  label: Categories
 - name: tags
   type: tag_list
   default: []
