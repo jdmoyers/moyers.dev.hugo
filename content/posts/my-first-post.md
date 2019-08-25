@@ -8,7 +8,6 @@ categories:
 tags:
 - tag 2
 - tag 3
-featureimage: uploads/4k-wallpaper-austria-background-1772970.jpg
 featuredimage: uploads/4k-wallpaper-austria-background-1772970.jpg
 
 ---
