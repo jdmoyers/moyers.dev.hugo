@@ -19,8 +19,8 @@ fields:
   config:
     required: false
     options:
-    - single
-    - listing
+    - Single
+    - Listing
     source:
       type: simple
       section: 
