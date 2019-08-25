@@ -22,7 +22,7 @@ fields:
   showOnly:
     field: show_featured_image
     value: true
-- name: featured_image_alt_text
+- name: featuredimagealttext
   type: text
   config:
     required: true
