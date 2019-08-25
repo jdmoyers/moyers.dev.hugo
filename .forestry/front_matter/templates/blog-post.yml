@@ -13,20 +13,6 @@ fields:
   config:
     required: true
   default: now
-- name: layout
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - Single
-    - Listing
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Template
 - name: categories
   type: tag_list
   default: []
