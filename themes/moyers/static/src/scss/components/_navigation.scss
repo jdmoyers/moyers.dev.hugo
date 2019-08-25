@@ -2,13 +2,20 @@
     grid-column-start: 1;
     grid-row-start: 1;
 
+    &-heading {
+        color: $white;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
     &-list {
         margin: 0.5rem 0;
         padding: 0;
         list-style: none;
 
-        @media screen and (min-width: 1024px) {
-            margin: 15% 0 0 0;
+        &--tags {
+            border-top: 1px solid rgba($white, 0.25);
+            padding: 0.5rem;
         }
     }
 
@@ -17,16 +24,35 @@
         margin: 0;
         border-top: 1px solid rgba($white, 0.25);
 
-        &:first-child {
-            @media screen and (min-width: 1024px) {
-                border-top: 0;
-            }
+        @media screen and (min-width: 1024px) {
+            padding: 0.5rem;
+        }
+
+        &--tags {
+            display: inline-block;
+            border-top: 0;
+            padding: 0;
+            margin: 0 0.25rem 0 0;
         }
     }
 
     &-link {
         color: $secondary;
         text-decoration: none;
+
+        &--tags {
+            color: $secondary;
+            padding: 0.125rem 0.25rem;
+            display: block;
+            font-size: 0.8rem;
+            border: 1px solid $primary;
+
+            &:hover {
+                background-color: $primary;
+                color: $white;
+                border: 1px solid $primary;
+            }
+        }
     }
 
     &-toggle_svg {

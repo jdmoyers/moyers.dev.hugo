@@ -1,8 +1,11 @@
 .sidebar {
     background-color: $gray;
-    padding: 1rem 15% 15% 15%;
+    padding: 1rem 15% 0;
     color: $white;
     grid-row-start: 3;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
 
     @media screen and (min-width: 1024px) {
         grid-row-start: 2;

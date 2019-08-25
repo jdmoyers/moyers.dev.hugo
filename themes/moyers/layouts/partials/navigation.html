@@ -13,6 +13,8 @@
             </svg>
         </button>
 
+        <div class="nav-heading">Pages</div>
+
         <ul class="nav-list">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
@@ -21,5 +23,33 @@
                 </li>
             {{ end }}
         </ul>
+
+        {{- if isset .Site.Taxonomies "categories" }}
+            {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+                <div class="nav-heading">Categories</div>
+
+                <ul class="nav-list">
+                    {{- range $name, $items := .Site.Taxonomies.categories }}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
+                        </li>
+                    {{- end }}
+                </ul>
+            {{- end }}
+        {{- end }}
+
+        {{- if isset .Site.Taxonomies "tags" }}
+            {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+                <div class="nav-heading">Tags</div>
+
+                <ul class="nav-list nav-list--tags">
+                    {{- range $name, $items := .Site.Taxonomies.tags }}
+                        <li class="nav-item nav-item--tags">
+                            <a class="nav-link nav-link--tags" href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
+                        </li>
+                    {{- end }}
+                </ul>
+            {{- end }}
+        {{- end }}
     </div>
 </nav>

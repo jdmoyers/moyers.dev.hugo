@@ -1,0 +1,32 @@
+.social {
+	&-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+		border-bottom: 1px solid rgba($white, 0.25);
+	}
+
+	&-item {
+		padding: 0;
+		display: inline-block;
+	}
+
+	&-link {
+		padding: 14px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		border-radius: 50%;
+
+		&:hover {
+			path{
+				fill: $white;	
+			}
+		}
+	}
+
+	&-icon {
+		height: 30px;
+	}
+}
