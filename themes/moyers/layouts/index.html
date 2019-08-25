@@ -1,17 +1,28 @@
 
 {{ define "mainImage" }}
     {{ with .Params.featuredImage }}
-        {{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
-        {{ $resized := $imageResource.Resize "300x" }}
+        {{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "uploads/" . ) }}
+        
+        {{ $large := $imageResource.Resize "910x" }}
+        {{ $medium := $imageResource.Resize "768x" }}
+        {{ $small := $imageResource.Resize "414x" }}
 
         <div class="main-image_wrapper">
-            <img class="main-image" src="{{ $resized.RelPermalink }}" alt="{{.Params.featuredImageAlt}}">
+            <a href="{{ . }}">
+                <img    src="small.jpg"
+                        sizes="100vw, (min-width: 1025px) 910px"
+                        srcset="{{ $medium.RelPermalink }} 414w,
+                                {{ $medium.RelPermalink }} 768w,
+                                {{ $large.RelPermalink }} 910w" 
+                        alt="yah"
+                >
+            </a>
         </div>
     {{ end }}
 {{ end }}
 
 {{ define "main" }}
     <h1>{{.Title}}</h1>
-    
+
     {{.Content}}
 {{ end }}
