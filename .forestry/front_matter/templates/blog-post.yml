@@ -13,6 +13,17 @@ fields:
   config:
     required: true
   default: now
-- type: text
-  name: layout
+- name: layout
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - single
+    - listing
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: Template
