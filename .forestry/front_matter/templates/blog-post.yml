@@ -25,11 +25,17 @@ fields:
   config:
     maxSize: 250
   label: Featured Image
+  showOnly:
+    field: show_featured_image
+    value: true
 - name: featuredimagealttext
   type: text
   config:
     required: true
   label: Featured Image Alt Text
+  showOnly:
+    field: show_featured_image
+    value: true
 - name: tags
   type: tag_list
   default: []
