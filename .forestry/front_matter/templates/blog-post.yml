@@ -27,5 +27,9 @@ fields:
       file: 
       path: 
   label: Template
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
 pages:
 - content/posts/my-first-post.md
