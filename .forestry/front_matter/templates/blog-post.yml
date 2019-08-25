@@ -1,0 +1,31 @@
+---
+label: Blog Post
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: datetime
+  name: date
+  label: Published Date
+  config:
+    required: true
+  default: now
+- name: layout
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Single
+    - Listing
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Template
+pages:
+- content/posts/my-first-post.md
