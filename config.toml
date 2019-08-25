@@ -3,3 +3,7 @@ languageCode = "en-us"
 title = "Josh Moyers"
 theme = "moyers"
 copyright = "Joshua Moyers"
+enableGitInfo = "true"
+
+[params]
+	dateformat = "January 2, 2006 at 1:04PM"
