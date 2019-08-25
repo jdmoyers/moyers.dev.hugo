@@ -9,6 +9,7 @@ tags:
 - tag 2
 - tag 3
 featureimage: uploads/4k-wallpaper-austria-background-1772970.jpg
+featuredimage: uploads/4k-wallpaper-austria-background-1772970.jpg
 
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet euismod diam, ac tincidunt dolor tempor eu. Maecenas consequat dolor vitae imperdiet luctus. Donec congue tristique condimentum. Quisque ac elit ex. Duis eu tellus sed mi bibendum laoreet. Mauris finibus urna ac metus feugiat, eu volutpat quam pulvinar. Morbi sem nisl, fermentum eu lorem ullamcorper, sagittis egestas orci. Suspendisse tempor erat vitae tortor pellentesque, ut posuere augue luctus. Mauris erat velit, convallis a dictum eget, posuere id ex. Maecenas malesuada lacinia ante. Morbi id ex a sem consectetur maximus. Donec accumsan felis sed nunc placerat, quis porta sapien elementum.
