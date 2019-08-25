@@ -4,10 +4,15 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
+  config:
+    required: true
 - type: datetime
   name: date
-  label: date
+  label: Published Date
+  config:
+    required: true
+  default: now
 - type: text
   name: layout
-  label: layout
+  label: Template
