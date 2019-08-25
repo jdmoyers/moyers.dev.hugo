@@ -13,14 +13,23 @@ fields:
   default: now
   config:
     required: true
+- name: show_featured_image
+  type: boolean
+  label: Show Featured Image
 - type: file
   name: featured_image
   label: Featured Image
+  showOnly:
+    field: show_featured_image
+    value: true
 - name: featured_image_alt_text
   type: text
   config:
     required: true
   label: Featured Image Alt Text
   description: Alt text for the featured image
+  showOnly:
+    field: show_featured_image
+    value: true
 pages:
 - content/_index.md
