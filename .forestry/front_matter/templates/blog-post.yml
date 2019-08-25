@@ -27,6 +27,10 @@ fields:
       file: 
       path: 
   label: Template
+- name: categories
+  type: tag_list
+  default: []
+  label: Categories
 - name: tags
   type: tag_list
   default: []
