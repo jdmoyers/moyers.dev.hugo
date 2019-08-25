@@ -1,3 +1,7 @@
+{{ define "mainImage" }}
+    {{ partial "main-image.html" . }}
+{{ end }}
+
 {{ define "main" }}
     <article class="post">
         <header class="post-header">
@@ -6,23 +10,58 @@
             {{ with .Params.subtitle }}
                 <span>{{ . }}</span>
             {{ end }}
-
-            <div class="post-meta">
-                {{- if not .Date.IsZero }}
-                    <div class="">
-                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.dateformat ) }}</time>
-                        <br />
-                        {{- if ne .Date .Lastmod }}
-                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Local.Format ( .Site.Params.dateformat ) }}</time>
-                        {{- end }}
-                    </div>
-                {{ end -}}
-            </div>
         </header>
 
         <section class="post-content">
             {{ .Content }}
         </section>
+
+        <footer class="post-footer">
+            <div class="post-meta">
+                {{ $catCount := len .Params.categories }}
+                {{- if .Params.categories }}
+                    <div class="categories">
+                        <div class="categories-heading">
+                            Posted in:
+                        </div>
+                        
+                        {{- range $index, $category := .Params.categories }}
+                            <a class="categories-link" href="{{ "categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ if ne (add $index 1) $catCount }},{{ end }}
+                        {{- end }}
+                    </div>
+                {{- end }}
+
+                {{- if not .Date.IsZero }}
+                    <div class="post-publish_date">
+                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.dateformat ) }}</time>
+                        by {{ .Site.Author.name }}
+                    </div>
+
+                    <div class="post-modify_date">
+                        {{- if ne .Date .Lastmod }}
+                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Local.Format ( .Site.Params.dateformat ) }}</time>
+                            by {{ .Site.Author.name }}
+                        {{- end }}
+                    </div>
+                {{ end -}}
+            </div>
+
+            {{- if .Params.tags }}
+                <div class="tags">
+                    <div class="tags-heading">
+                        Tagged as:
+                    </div>
+                    
+                    <ul class="tags-list">
+                        {{- range .Params.tags }}
+                            <li class="tags-item">
+                                <a class="tags-link" href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">{{ . }}</a>
+                            </li>
+                        {{- end }}
+                    </ul>
+                </div>
+            {{- end }}
+        </footer>
 
         <div>
             <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->

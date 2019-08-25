@@ -6,8 +6,11 @@
 @import 'global/typography';
 
 // Components
+@import 'components/categories';
 @import 'components/header';
 @import 'components/navigation';
 @import 'components/sidebar';
 @import 'components/social';
+@import 'components/post';
+@import 'components/tags';
 @import 'components/footer';

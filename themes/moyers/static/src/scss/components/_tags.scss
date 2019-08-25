@@ -1,0 +1,48 @@
+.tags {
+    border-top: 1px solid $medium-gray;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    font-size: 0.8rem;
+
+    &-heading {
+        display: inline-block;
+        border-top: 0;
+        padding: 0.375rem 0;
+        margin: 0.375rem 0.25rem 0.375rem 0;
+        white-space: nowrap;
+    }
+
+    &-list {
+        border-top: 1px solid rgba($white, 0.25);
+        padding: 0.5rem;
+        list-style: none;
+        margin: 0;
+    }
+
+    &-item {
+        display: inline-block;
+        border-top: 0;
+        padding: 0;
+        margin: 0 0.25rem 0 0;
+    }
+
+    &-link {
+        color: $primary;
+        padding: 0.125rem 0.25rem;
+        display: block;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            border: 1px solid $primary;
+        }
+    }
+
+    &-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

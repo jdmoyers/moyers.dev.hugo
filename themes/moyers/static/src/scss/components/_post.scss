@@ -1,0 +1,13 @@
+.post {
+    &-footer {
+        font-size: 0.75rem;
+        border-top: 1px solid $medium-gray;
+        margin: 1rem 0;
+        padding: 0.5rem 0;
+    }
+
+    &-publish_date,
+    &-modify_date {
+        
+    }
+}

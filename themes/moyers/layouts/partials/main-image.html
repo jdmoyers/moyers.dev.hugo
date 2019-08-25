@@ -1,0 +1,19 @@
+{{ with .Params.featuredImage }}
+	{{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "uploads/" . ) }}
+
+	{{ $large := $imageResource.Fill "910x500" }}
+	{{ $medium := $imageResource.Fill "768x422" }}
+	{{ $small := $imageResource.Fill "414x227" }}
+
+	<div class="main-image_wrapper">
+		<a href="{{ . }}">
+			<img    src="small.jpg"
+					sizes="100vw, (min-width: 1025px) 910px"
+					srcset="{{ $medium.RelPermalink }} 414w,
+							{{ $medium.RelPermalink }} 768w,
+							{{ $large.RelPermalink }} 910w" 
+					alt="yah"
+			>
+		</a>
+	</div>
+{{ end }}
