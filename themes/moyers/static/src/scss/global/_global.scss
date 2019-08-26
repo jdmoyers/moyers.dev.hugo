@@ -67,3 +67,26 @@ img {
         padding: 10%;
     }
 }
+
+.readmore {
+    &-reveal {
+        display: none;
+    }
+
+    &-hide {
+        display: inline;
+    }
+
+    &:hover,
+    &:focus {
+        .readmore {
+            &-reveal {
+                display: inline;
+            }
+
+            &-hide {
+                display: none;
+            }
+        }
+    }
+}

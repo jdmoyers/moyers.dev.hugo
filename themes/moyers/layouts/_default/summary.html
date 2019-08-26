@@ -8,6 +8,8 @@
 	{{ .Summary }}
 
 	{{- if .Truncated }}
-		<a href="{{ .RelPermalink }}">Read more</a>
+		<a class="readmore" href="{{ .RelPermalink }}">
+			Read more<span class="readmore-hide" aria-hidden="true">...</span>
+			<span class="readmore-reveal"> about &ldquo;{{ .Title }}&rdquo;</span></a>
 	{{- end }}
 </article>
