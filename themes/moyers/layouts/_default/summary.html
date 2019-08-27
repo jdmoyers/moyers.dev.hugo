@@ -1,15 +1,22 @@
-<article>
-	<header>
-		<h2>
-			<a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
-		</h2>
-	</header>
+<article class="summary">
+    <header class="summary-header">
+        <h2 class="summary-heading">
+            <a class="summary-heading_link" href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
+        </h2>
 
-	{{ .Summary }}
+        {{- if not .Date.IsZero }}
+            <div class="summary-publish_date">
+                Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.dateformat ) }}</time>
+                by {{ .Site.Author.name }}
+            </div>
+        {{ end -}}
+    </header>
 
-	{{- if .Truncated }}
-		<a class="readmore" href="{{ .RelPermalink }}">
-			Read more<span class="readmore-hide" aria-hidden="true">...</span>
-			<span class="readmore-reveal"> about &ldquo;{{ .Title }}&rdquo;</span></a>
-	{{- end }}
+    {{ .Summary }}
+
+    {{- if .Truncated }}
+        <a class="readmore" href="{{ .RelPermalink }}">
+            Read more<span class="readmore-hide" aria-hidden="true">...</span>
+            <span class="readmore-reveal"> about &ldquo;{{ .Title }}&rdquo;</span></a>
+    {{- end }}
 </article>

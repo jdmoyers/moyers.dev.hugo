@@ -29,13 +29,13 @@
 
                 {{- if not .Date.IsZero }}
                     <div class="post-publish_date">
-                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.dateformat ) }}</time>
+                        Published: <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Local.Format ( .Site.Params.datetimeformat ) }}</time>
                         by {{ .Site.Author.name }}
                     </div>
 
                     <div class="post-modify_date">
                         {{- if ne .Date .Lastmod }}
-                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Local.Format ( .Site.Params.dateformat ) }}</time>
+                            Last modified: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}">{{ .Lastmod.Local.Format ( .Site.Params.datetimeformat ) }}</time>
                             by {{ .Site.Author.name }}
                         {{- end }}
                     </div>
