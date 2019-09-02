@@ -1,4 +1,23 @@
 ---
 label: Category Index
 hide_body: false
-fields: []
+fields:
+- name: show_featured_image
+  type: boolean
+  label: Show Featured Image
+- name: featuredImage
+  type: file
+  config:
+    maxSize: 250
+  label: Featured Image
+  showOnly:
+    field: show_featured_image
+    value: true
+- name: featuredImageAltText
+  type: text
+  config:
+    required: false
+  label: Featured Image Alt Text
+  showOnly:
+    field: show_featured_image
+    value: true
