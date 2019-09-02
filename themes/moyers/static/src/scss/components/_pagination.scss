@@ -1,0 +1,13 @@
+.pagination {
+    text-align: center;
+
+    &-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &-item {
+        display: inline;
+    }
+}
