@@ -25,46 +25,26 @@ h5 {
 
 h1 {
     margin-top: 0;
-    font-size: 3.156em;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 4.209em;
-    }
+    font-size: 3.052em;
 }
 
 h2 {
-    font-size: 2.367em;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 3.157em;
-    }
+    font-size: 2.441em;
 }
 
 h3 {
-    font-size: 1.776em;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 2.369em;
-    }
+    font-size: 1.953em;
 }
 
 h4 {
-    font-size: 1.332em;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 1.777em;
-    }
+    font-size: 1.563em;
 }
 
 h5 {
-    font-size: 1.333em;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 1em;
-    }
+    font-size: 1.25em;
 }
 
 small,
 .text_small {
-    font-size: 0.75em;
+    font-size: 0.8em;
 }
