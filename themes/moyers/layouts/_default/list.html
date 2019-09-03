@@ -8,7 +8,7 @@
 
 		{{ .Content }}
 		
-		{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+		{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
 
 		{{- range $paginator.Pages }}
 			{{- .Render "summary" }}

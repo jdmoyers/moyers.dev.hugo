@@ -1,13 +1,17 @@
 .pagination {
     text-align: center;
+    border-top: 1px solid $medium-gray;
+    padding-top: 1rem;
 
     &-list {
         margin: 0;
         padding: 0;
         list-style: none;
+        display: inline-block;
     }
 
     &-item {
         display: inline;
+        padding: 0 5px;
     }
 }
