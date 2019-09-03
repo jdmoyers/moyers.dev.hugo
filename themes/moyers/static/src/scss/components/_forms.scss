@@ -37,8 +37,17 @@
         font-size: 0.9rem;
         background-color: $primary;
         color: $white;
-        border: 0;
+        border: 2px solid $primary;
         cursor: pointer;
-        transition: box-shadow ease-in-out 200ms;
+        transition: all ease-in-out 100ms;
+
+        &:hover {
+            background-color: $white;
+            color: $primary;
+        }
+
+        &:active {
+            border: 2px solid $secondary;
+        }
     }
 }

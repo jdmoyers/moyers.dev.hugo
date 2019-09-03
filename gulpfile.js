@@ -53,10 +53,10 @@ function jsBuild() {
         .src(paths.js.src)
         .pipe(eslint())
         .pipe(eslint.format())
+        .pipe(concat('scripts.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.js.dest))
 }
@@ -67,10 +67,10 @@ function jsDev() {
         .pipe(plumber())
         .pipe(eslint())
         .pipe(eslint.format())
+        .pipe(concat('scripts.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(concat('scripts.js'))
         .pipe(gulp.dest(paths.js.dest, { sourcemaps: true }))
 }
 
