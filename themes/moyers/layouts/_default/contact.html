@@ -1,0 +1,32 @@
+{{ define "mainImage" }}
+    {{ partial "main-image.html" . }}
+{{ end }}
+
+{{ define "main" }}
+    <h1>{{.Title}}</h1>
+
+    {{.Content}}
+
+    <form class="form">
+        <ul class="form-list">
+            <li class="form-item">
+                <label class="form-label form-label--required" for="name">Name</label>
+                <input class="form-input" id="name" name="name" type="text" required>
+            </li>
+
+            <li class="form-item">
+                <label class="form-label form-label--required" for="email">Email</label>
+                <input type="email" class="form-input" id="email" name="email" required>
+            </li>
+
+            <li class="form-item">
+                <label class="form-label form-label--required" for="message">Message</label>
+                <textarea class="form-input" id="message" name="message"></textarea>
+            </li>
+
+            <li class="form-item">
+                <button class="form-button form-button--submit">Send Message</button>
+            </li>
+        </ul>
+    </form>
+{{ end }}

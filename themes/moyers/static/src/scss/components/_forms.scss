@@ -1,0 +1,44 @@
+.form {
+    &-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &-item {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &-label {
+        display: block;
+        font-size: 0.9rem;
+
+        &--required {
+            &::after {
+                content: '*';
+                color: $error;
+            }
+        }
+    }
+
+    &-input {
+        display: block;
+        width: 100%;
+        border: 1px solid $medium-gray;
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: $white;
+        font-family: inherit;
+    }
+
+    &-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        background-color: $primary;
+        color: $white;
+        border: 0;
+        cursor: pointer;
+        transition: box-shadow ease-in-out 200ms;
+    }
+}
