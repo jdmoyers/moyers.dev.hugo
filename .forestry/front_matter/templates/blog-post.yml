@@ -40,5 +40,3 @@ fields:
   type: tag_list
   default: []
   label: Tags
-pages:
-- content/posts/my-first-post.md
