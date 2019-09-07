@@ -19,9 +19,7 @@ forms.forEach((form) => {
 
         let errors = form.querySelectorAll('label.error').length;
 
-        if(errors > 0) {
-            console.log('throw errors');
-        } else {
+        if(errors <= 0) {
             submitForm(form);
         }
     });
