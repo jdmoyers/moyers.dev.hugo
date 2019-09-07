@@ -1,12 +1,13 @@
 ---
-title: "Contact Me"
-date: 2019-08-03T19:31:39-04:00
-draft: false
-keywords: "test test2"
-description: "This is the description of this page"
-menu: "main"
-weight: 2
+title: Contact Me
+date: 2019-08-03T23:31:39.000+00:00
+keywords: test test2
+description: This is the description of this page
+weight: "2"
 layout: contact
----
+menu:
+  main:
+    weight: 2
 
-This is really just a test of having a second page
+---
+Looking to get in contact with me? You can reach me using the form on this page. Please feel free to send me any questions or comments, and I will try to get back to you as soon as possible.
