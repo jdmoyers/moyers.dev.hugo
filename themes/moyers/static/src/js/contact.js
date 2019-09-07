@@ -1,4 +1,4 @@
-var form = document.getElementById('contact-form');
+var forms = document.querySelectorAll('form');
 var validateFields = document.querySelectorAll('[data-val]');
 
 validateFields.forEach((field) => {
@@ -7,7 +7,7 @@ validateFields.forEach((field) => {
     })
 });
 
-if(form != null) {
+forms.forEach((form) => {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -25,8 +25,7 @@ if(form != null) {
             console.log('submit');
         }
     });
-}
-
+});
 
 function validateField(field) {
     switch (field.type.toLowerCase()) {
@@ -55,7 +54,7 @@ function validateEmail (email) {
 
 function toggleValidation(field, state) {
     var fieldName = field.name;
-    var label = form.querySelector(`[for=${fieldName}]`);
+    var label = field.parentNode.querySelector(`[for=${fieldName}]`);
     var errorElement = field.parentNode.querySelector('.form-error');
     var errorMessage = field.getAttribute('data-val');
 
