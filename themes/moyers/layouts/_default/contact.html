@@ -12,24 +12,30 @@
             <li class="form-item">
                 <label class="form-label form-label--required" for="name">Name</label>
                 <input class="form-input" id="name" name="name" type="text" data-val="The name is reqired.">
-                <div class="form-error"></div>
+                <div class="form-error" aria-hidden="true"></div>
             </li>
 
             <li class="form-item">
                 <label class="form-label form-label--required" for="email">Email</label>
                 <input type="email" class="form-input" id="email" name="email" data-val="The email field must contain a valid email address.">
-                <div class="form-error"></div>
+                <div class="form-error" aria-hidden="true"></div>
             </li>
 
             <li class="form-item">
                 <label class="form-label form-label--required" for="message">Message</label>
                 <textarea class="form-input" id="message" name="message" data-val="The message field is reqired."></textarea>
-                <div class="form-error"></div>
+                <div class="form-error"  aria-hidden="true"></div>
             </li>
 
             <li class="form-item">
                 <button class="form-button form-button--submit">Send Message</button>
             </li>
         </ul>
+
+        <div class="form-response" aria-hidden="true">
+            <p>Thank you for contacting me. I will review your message and get back to you as soon as possible.</p>
+        </div>
     </form>
+
+    
 {{ end }}

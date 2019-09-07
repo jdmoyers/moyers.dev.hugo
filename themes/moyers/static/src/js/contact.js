@@ -1,5 +1,5 @@
-var forms = document.querySelectorAll('form');
-var validateFields = document.querySelectorAll('[data-val]');
+let forms = document.querySelectorAll('form');
+let validateFields = document.querySelectorAll('[data-val]');
 
 validateFields.forEach((field) => {
     field.addEventListener('blur', e => {
@@ -11,33 +11,18 @@ forms.forEach((form) => {
     form.addEventListener('submit', e => {
         e.preventDefault();
         
-        var fields = form.querySelectorAll('[data-val]');
+        let fields = form.querySelectorAll('[data-val]');
 
         fields.forEach((field) => {
             validateField(field);
         });
 
-        var errors = form.querySelectorAll('label.error').length;
+        let errors = form.querySelectorAll('label.error').length;
 
         if(errors > 0) {
             console.log('throw errors');
         } else {
-            const formData = new FormData(form);
-
-            fetch(form.getAttribute('action'), {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-                },
-                
-                body: new URLSearchParams(formData).toString(),
-            })
-            .then(res => {
-                if (res) {
-                    console.log(res);
-                }
-            });
+            submitForm(form);
         }
     });
 });
@@ -68,16 +53,17 @@ function validateEmail (email) {
 }
 
 function toggleValidation(field, state) {
-    var fieldName = field.name;
-    var label = field.parentNode.querySelector(`[for=${fieldName}]`);
-    var errorElement = field.parentNode.querySelector('.form-error');
-    var errorMessage = field.getAttribute('data-val');
+    const fieldName = field.name;
+    const label = field.parentNode.querySelector(`[for=${fieldName}]`);
+    const errorElement = field.parentNode.querySelector('.form-error');
+    const errorMessage = field.getAttribute('data-val');
 
     if(state == 'invalid') {
         field.classList.add('error');
         label.classList.add('error');
         errorElement.innerHTML = errorMessage;
         errorElement.classList.add('show');
+        errorElement.setAttribute('aria-hidden', false);
     } else {
         errorElement.innerHTML = '';
 
@@ -91,6 +77,47 @@ function toggleValidation(field, state) {
 
         if(errorElement.classList.contains('show')) {
             errorElement.classList.remove('show');
+            errorElement.setAttribute('aria-hidden', true);
         }
     }
+}
+
+function submitForm(form) {
+    const formData = new FormData(form);
+    const formResponse = form.querySelector('.form-response');
+    const successMessage = formResponse.innerHTML;
+
+    fetch(form.getAttribute('action'), {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        
+        body: new URLSearchParams(formData).toString(),
+    })
+    .then(handleSubmitErrors)
+    .then(res => {
+        if (res) {
+            
+            formResponse.setAttribute('aria-hidden', 'false');
+            formResponse.classList.remove('error');
+            formResponse.classList.add('success');
+            form.reset();
+        }
+    })
+    .catch(error => {
+        formResponse.innerHTML = `
+            The following error has occurred while trying to submit your form:
+            <div class="form-response_error">${error}</div>`;
+
+        formResponse.classList.add('error');
+    });
+}
+function handleSubmitErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+
+    return response;
 }

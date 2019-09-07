@@ -68,4 +68,25 @@
             display: block;
         }
     }
+
+    &-response {
+        display: none;
+        color: $success;
+
+        &.success,
+        &.error {
+            display: block;
+        }
+
+        &.error {
+            color: $error;
+        }
+    }
+
+    &-response_error {
+        padding: 1rem;
+        font-size: .8rem;
+        border: 1px solid $error;
+        margin-top: 1rem;
+    }
 }
