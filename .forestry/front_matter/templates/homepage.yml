@@ -17,7 +17,7 @@ fields:
   type: boolean
   label: Show Featured Image
 - type: file
-  name: featured_image
+  name: featuredimage
   label: Featured Image
   showOnly:
     field: show_featured_image
