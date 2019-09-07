@@ -99,7 +99,7 @@ function submitForm(form) {
     .then(handleSubmitErrors)
     .then(res => {
         if (res) {
-            
+            formResponse.innerHTML = successMessage;
             formResponse.setAttribute('aria-hidden', 'false');
             formResponse.classList.remove('error');
             formResponse.classList.add('success');
