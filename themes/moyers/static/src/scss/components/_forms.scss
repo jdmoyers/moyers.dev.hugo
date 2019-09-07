@@ -20,6 +20,10 @@
                 color: $error;
             }
         }
+
+        &.error {
+            color: $error;
+        }
     }
 
     &-input {
@@ -30,6 +34,10 @@
         font-size: 1rem;
         background-color: $white;
         font-family: inherit;
+
+        &.error {
+            border: 1px solid $error;
+        }
     }
 
     &-button {
@@ -48,6 +56,16 @@
 
         &:active {
             border: 2px solid $secondary;
+        }
+    }
+
+    &-error {
+        display: none;
+        color: $error;
+        font-size: 0.85rem;
+
+        &.show {
+            display: block;
         }
     }
 }
