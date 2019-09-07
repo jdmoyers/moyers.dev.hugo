@@ -19,6 +19,14 @@
         justify-content: center;
         border-radius: 50%;
 
+        @media screen and (min-width: 1024px) {
+            padding: 9px;
+        }
+
+        @media screen and (min-width: 1180px) {
+            padding: 14px;
+        }
+
         &:hover {
             path {
                 fill: $white;
