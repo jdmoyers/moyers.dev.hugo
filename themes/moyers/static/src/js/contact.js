@@ -2,13 +2,13 @@ var forms = document.querySelectorAll('form');
 var validateFields = document.querySelectorAll('[data-val]');
 
 validateFields.forEach((field) => {
-    field.addEventListener('blur', function() {
-        validateField(this);
+    field.addEventListener('blur', e => {
+        validateField(e.target);
     })
 });
 
 forms.forEach((form) => {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
         
         var fields = form.querySelectorAll('[data-val]');
@@ -18,11 +18,26 @@ forms.forEach((form) => {
         });
 
         var errors = form.querySelectorAll('label.error').length;
-        console.log(errors);
+
         if(errors > 0) {
             console.log('throw errors');
         } else {
-            console.log('submit');
+            const formData = new FormData(form);
+
+            fetch(form.getAttribute('action'), {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                },
+                
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(res => {
+                if (res) {
+                    console.log(res);
+                }
+            });
         }
     });
 });
@@ -64,6 +79,8 @@ function toggleValidation(field, state) {
         errorElement.innerHTML = errorMessage;
         errorElement.classList.add('show');
     } else {
+        errorElement.innerHTML = '';
+
         if(field.classList.contains('error')) {
             field.classList.remove('error');
         }
