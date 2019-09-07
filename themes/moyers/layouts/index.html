@@ -7,11 +7,13 @@
 
     {{.Content}}
 
-    <h2>Latest Posts</h2>
+    <section class="recent_posts">
+        <h2 class="recent_posts-heading">Latest Posts</h2>
 
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 3 }}
-    
-    {{ range $paginator.Pages }}
-        {{ .Render "summary-index" }}
-    {{ end }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 3 }}
+        
+        {{ range $paginator.Pages }}
+            {{ .Render "summary-index" }}
+        {{ end }}
+    </section>
 {{ end }}
