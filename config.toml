@@ -4,6 +4,7 @@ title = "Josh Moyers"
 theme = "moyers"
 copyright = "Joshua Moyers"
 enableGitInfo = "true"
+enableRobotsTXT = "true"
 
 [author]
 	name = "Joshua Moyers"
