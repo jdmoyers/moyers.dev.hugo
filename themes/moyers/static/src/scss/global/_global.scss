@@ -84,11 +84,15 @@ img {
     &:focus {
         .readmore {
             &-reveal {
-                display: inline;
+                @media screen and (min-width: 1024px) {}
+                    display: inline;
+                }
             }
 
             &-hide {
-                display: none;
+                @media screen and (min-width: 1024px) {
+                    display: none;
+                }
             }
         }
     }
