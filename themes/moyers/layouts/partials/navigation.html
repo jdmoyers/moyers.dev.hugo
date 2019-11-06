@@ -1,4 +1,4 @@
-<nav class="nav">
+<div class="nav">
     <button class="nav-toggle js-toggle-navigation">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="nav-toggle_svg svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
@@ -14,43 +14,49 @@
             <span class="a11y-sr-only">Toggle Navigation</span>
         </button>
 
-        <div class="nav-heading">Pages</div>
+        <div class="nav-heading" aria-hidden="true">Pages</div>
 
-        <ul class="nav-list">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-                <li class="nav-item{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
-                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
-                </li>
-            {{ end }}
-        </ul>
+        <nav aria-label="Pages">
+            <ul class="nav-list">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <li class="nav-item{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
+                        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
 
         {{- if isset .Site.Taxonomies "categories" }}
             {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
-                <div class="nav-heading">Categories</div>
+                <div class="nav-heading" aria-hidden="true">Categories</div>
 
-                <ul class="nav-list">
-                    {{- range $name, $items := .Site.Taxonomies.categories }}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
-                        </li>
-                    {{- end }}
-                </ul>
+                <nav aria-label="Categories">
+                    <ul class="nav-list">
+                        {{- range $name, $items := .Site.Taxonomies.categories }}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
+                            </li>
+                        {{- end }}
+                    </ul>
+                </nav>
             {{- end }}
         {{- end }}
 
         {{- if isset .Site.Taxonomies "tags" }}
             {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
-                <div class="nav-heading">Tags</div>
-
-                <ul class="nav-list nav-list--tags">
-                    {{- range $name, $items := .Site.Taxonomies.tags }}
-                        <li class="nav-item nav-item--tags">
-                            <a class="nav-link nav-link--tags" href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
-                        </li>
-                    {{- end }}
-                </ul>
+                <div class="nav-heading" aria-hidden="true">Tags</div>
+                
+                <nav aria-label="Tags">
+                    <ul class="nav-list nav-list--tags">
+                        {{- range $name, $items := .Site.Taxonomies.tags }}
+                            <li class="nav-item nav-item--tags">
+                                <a class="nav-link nav-link--tags" href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
+                            </li>
+                        {{- end }}
+                    </ul>
+                </nav>
             {{- end }}
         {{- end }}
     </div>
-</nav>
+</div>
