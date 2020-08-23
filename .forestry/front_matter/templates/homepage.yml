@@ -2,34 +2,37 @@
 label: Homepage
 hide_body: false
 fields:
-- type: text
-  name: title
-  label: Title
-  config:
-    required: true
-- type: datetime
-  name: date
-  label: Published Date
-  default: now
-  config:
-    required: true
-- name: show_featured_image
-  type: boolean
-  label: Show Featured Image
-- type: file
-  name: featuredimage
-  label: Featured Image
-  showOnly:
-    field: show_featured_image
-    value: true
-- name: featuredimagealttext
-  type: text
-  config:
-    required: true
-  label: Featured Image Alt Text
-  description: Alt text for the featured image
-  showOnly:
-    field: show_featured_image
-    value: true
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: datetime
+    name: date
+    label: Published Date
+    default: now
+    config:
+      required: true
+  - name: show_featured_image
+    type: boolean
+    label: Show Featured Image
+  - type: file
+    name: featuredimage
+    label: Featured Image
+    showOnly:
+      field: show_featured_image
+      value: true
+  - name: featuredimagealttext
+    type: text
+    config:
+      required: true
+    label: Featured Image Alt Text
+    description: Alt text for the featured image
+    showOnly:
+      field: show_featured_image
+      value: true
+  - name: MetaDescription
+    type: textn
+    label: metadescription
 pages:
-- content/_index.md
+  - content/_index.md

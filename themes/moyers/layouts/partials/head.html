@@ -1,28 +1,63 @@
 <head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="{{ .MetaDescription }}" />
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Description }}" />
+  <meta name="keywords" content="{{ .Keywords }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- specify viewport: https://developers.google.com/speed/docs/insights/ConfigureViewport -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/img/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/img/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/img/favicon-16x16.png"
+  />
+  <link rel="manifest" href="/site.webmanifest" />
 
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description }}">
-    <meta name="keywords" content="{{ .Keywords }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- specify viewport: https://developers.google.com/speed/docs/insights/ConfigureViewport -->
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <script>(function (e) { e.className = e.className.replace('no-js', 'js'); }(document.documentElement));</script>
-    
-    <!--[if lt IE 9]>
-        <script>
-            (function (d, a) {
-                d.documentElement.className = 'lt-ie9'; var l = a.length; while(l--){ d.createElement(a[l]); }
-            }(document, ['HEADER', 'NAV', 'SECTION', 'FOOTER', 'ARTICLE', 'MAIN', 'FIGCAPTION', 'FIGURE', 'ASIDE']));
-        </script>
-    <![endif]-->
+  <script>
+    (function (e) {
+      e.className = e.className.replace("no-js", "js");
+    })(document.documentElement);
+  </script>
 
-    <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,700,700i&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!--[if lt IE 9]>
+    <script>
+      (function (d, a) {
+        d.documentElement.className = "lt-ie9";
+        var l = a.length;
+        while (l--) {
+          d.createElement(a[l]);
+        }
+      })(document, [
+        "HEADER",
+        "NAV",
+        "SECTION",
+        "FOOTER",
+        "ARTICLE",
+        "MAIN",
+        "FIGCAPTION",
+        "FIGURE",
+        "ASIDE",
+      ]);
+    </script>
+  <![endif]-->
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Barlow:400,400i,700,700i&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>

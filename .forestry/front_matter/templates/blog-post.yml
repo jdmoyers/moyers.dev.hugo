@@ -2,44 +2,47 @@
 label: Blog Post
 hide_body: false
 fields:
-- type: text
-  name: title
-  label: Title
-  config:
-    required: true
-- type: datetime
-  name: date
-  label: Published Date
-  config:
-    required: true
-  default: now
-- name: categories
-  type: tag_list
-  default: []
-  label: Categories
-- name: show_featured_image
-  type: boolean
-  label: Show Featured Image
-- name: featuredimage
-  type: file
-  config:
-    maxSize: 250
-  label: Featured Image
-  showOnly:
-    field: show_featured_image
-    value: true
-- name: featuredimagealttext
-  type: text
-  config:
-    required: true
-  label: Featured Image Alt Text
-  showOnly:
-    field: show_featured_image
-    value: true
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: datetime
+    name: date
+    label: Published Date
+    config:
+      required: true
+    default: now
+  - name: categories
+    type: tag_list
+    default: []
+    label: Categories
+  - name: show_featured_image
+    type: boolean
+    label: Show Featured Image
+  - name: featuredimage
+    type: file
+    config:
+      maxSize: 250
+    label: Featured Image
+    showOnly:
+      field: show_featured_image
+      value: true
+  - name: featuredimagealttext
+    type: text
+    config:
+      required: true
+    label: Featured Image Alt Text
+    showOnly:
+      field: show_featured_image
+      value: true
+  - name: tags
+    type: tag_list
+    default: []
+    label: Tags
+  - name: MetaDescription
+    type: textn
+    label: metadescription
 pages:
-- content/posts/bemodules-my-first-npm-package.md
-- content/posts/jamstack.md
+  - content/posts/bemodules-my-first-npm-package.md
+  - content/posts/jamstack.md
