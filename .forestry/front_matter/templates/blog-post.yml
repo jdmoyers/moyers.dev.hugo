@@ -41,4 +41,5 @@ fields:
   default: []
   label: Tags
 pages:
+- content/posts/bemodules-my-first-npm-package.md
 - content/posts/jamstack.md
